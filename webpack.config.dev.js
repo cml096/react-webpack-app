@@ -1,13 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     module: {
         rules: [
@@ -15,8 +16,8 @@ module.exports = {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'ts-loader'
-                }
+                    loader: 'ts-loader',
+                },
             },
             {
                 test: /\.(png|jpg|svg)$/i,
@@ -30,7 +31,7 @@ module.exports = {
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
             }
-        ]
+        ],
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
@@ -43,6 +44,7 @@ module.exports = {
             '@assets': path.resolve(__dirname, 'src/assets')
         }
     },
+    devtool: 'source-map',
     optimization: {
         minimize:true,
         minimizer: [
@@ -66,5 +68,12 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html',
         })
-    ]
+    ],
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 3005,
+        open: true,
+        hot: true,
+    }
 };
