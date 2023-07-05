@@ -35,12 +35,14 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
         alias: {
-            '@components': path.resolve(__dirname, 'src/components'),
-            '@containers': path.resolve(__dirname, 'src/containers'),
-            '@context': path.resolve(__dirname, 'src/context'),
-            '@hooks': path.resolve(__dirname, 'src/hooks'),
-            '@routes': path.resolve(__dirname, 'src/routes'),
-            '@assets': path.resolve(__dirname, 'src/assets')
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@context': path.resolve(__dirname, 'src/context/'),
+            '@hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@routes': path.resolve(__dirname, 'src/routes/'),
+            '@assets': path.resolve(__dirname, 'src/assets/'),
+            '@utils': path.resolve(__dirname, 'src/utils/'),
+            '@views': path.resolve(__dirname, 'src/views/')
         }
     },
     optimization: {
