@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import ReactDOM from 'react-dom/client';
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
 
-const App = () => {
-    return (
-        <div className="App">
-            <Header />
-            // your main content goes here
-            <Footer />
-        </div>
-    );
-}
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </React.StrictMode>
+);
