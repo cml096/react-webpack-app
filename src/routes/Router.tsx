@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import {Route, Routes as ReactRoutes} from 'react-router-dom';
-import {wait} from "../utils/share.utils";
+import {wait} from "@utils/share.utils";
 
 export enum AppRouter {
     HOME = '/home',

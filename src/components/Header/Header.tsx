@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '@assets/logo-align-towards-spine.jpg';
 import './Header.scss';
 import {Link} from "react-router-dom";
-import {AppRouter} from "../../routes/Router";
+import {AppRouter} from "@routes/Router";
 
 const Header: React.FC = () => {
     return (
